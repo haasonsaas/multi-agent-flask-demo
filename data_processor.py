@@ -1,5 +1,5 @@
-import pandas as pd
-import numpy as np
+# import pandas as pd
+# import numpy as np
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -59,7 +59,7 @@ class DataProcessor:
             'content_density': data['text_length'] / (data['num_links'] + 1),
             'media_ratio': data['num_images'] / (data['num_links'] + data['num_images'] + 1),
             'header_count': len(data['headers']),
-            'avg_header_length': np.mean([len(h) for h in data['headers']]) if data['headers'] else 0
+            'avg_header_length': sum([len(h) for h in data['headers']]) / len(data['headers']) if data['headers'] else 0
         }
     
     def save_results(self, results: List[Dict[str, Any]]):

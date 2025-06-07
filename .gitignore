@@ -8,6 +8,7 @@ env/
 venv/
 ENV/
 .venv
+.env
 
 # Data
 data/
@@ -26,6 +27,7 @@ data/
 Thumbs.db
 
 # Project specific
-results/
 logs/
 *.log
+*.db
+dashboard.db
